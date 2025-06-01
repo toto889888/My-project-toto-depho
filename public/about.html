@@ -1,0 +1,434 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JarnT0-Travel In Laos</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <link href="img/favicon.ico" rel="icon">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&amp;family=Nunito:wght@600;700;800&amp;display=swap"
+        rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Scoped CSS for Read More Modal and Button */
+        #readMoreModal .modal-content {
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border: none;
+            background-color: #ffffff;
+        }
+        #readMoreModal .modal-header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom: none;
+        }
+        #readMoreModal .modal-title {
+            font-size: 2rem; /* Large title */
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        #readMoreModal .modal-body {
+            padding: 30px;
+            font-size: 1.25rem; /* Large body text */
+            line-height: 1.6;
+            color: #333333;
+        }
+        #readMoreModal .modal-body p {
+            margin-bottom: 20px;
+        }
+        #readMoreModal .modal-footer {
+            padding: 15px 30px;
+            border-top: none;
+        }
+        .read-more-btn {
+            background-color: #007bff;
+            border: none;
+            font-size: 1.25rem; /* Large button text */
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .read-more-btn:hover {
+            background-color: #0056b3;
+        }
+        #readMoreModal .btn-secondary {
+            background-color: #6c757d;
+            border: none;
+            font-size: 1.25rem;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        #readMoreModal .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        #readMoreModal .btn-close {
+            filter: invert(1); /* White close button for contrast */
+        }
+        /* Responsive adjustments for modal */
+        @media (max-width: 576px) {
+            #readMoreModal .modal-title {
+                font-size: 1.5rem;
+            }
+            #readMoreModal .modal-body {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            .read-more-btn,
+            #readMoreModal .btn-secondary {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+      #hove:hover {
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        #hov:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+        #spinner {
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="spinner"
+        class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>ປະເທດລາວ</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+856 2098837409</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>soukphasun8899@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                            class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i
+                            class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm">
+            <img src="img/logo.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link ">ໜ້າຫຼັກ</a>
+                    <a href="about.html" class="nav-item nav-link active">ກ່ຽວກັບ</a>
+                   
+                    <a href="package.html" class="nav-item nav-link">ສະຖານທີ່</a>
+                   
+                    <a href="contact.html" class="nav-item nav-link">ຕິດຕໍ່</a>
+                </div>
+                 <a href="register.html" class="btn btn-primary rounded-pill py-2 px-4">ສະມັກບັນຊີ</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">ກ່ຽວກັບພວກເຮົາ</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">ໜ້າຫຼັກ</a></li>
+                                <li class="breadcrumb-item"><a href="contact.html">ຕິດຕໍ່</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">ກ່ຽວກັບ</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+
+
+     
+   <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/1.png" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">ກ່ຽວກັບພວກເຮົາ</h6>
+                    <h1 class="mb-4">ຍິນດີຕ້ອນຮັບ <span class="text-primary">ເຂົ້າສູ່ການທ່ອງທ່ຽວ</span></h1>
+                    <p class="mb-4">
+                        ລາວເປັນປະເທດເພື່ອນບ້ານທີ່ຕັ້ງຢູ່ໃນພາກຕາເວັນອອກສຽງເໜືອຂອງປະເທດໄທ.ນອກ​ນີ້​ຍັງ​ເປັນ​ປະ​ເທດ​ທີ່​ມີ​ຊາຍ​ແດນ​ຕິດ​ກັບ​ຈີນ,
+                        ມຽນມາ, ຫວຽດນາມ ​ແລະ ກຳປູ​ເຈຍ. </p>
+                    <p class="mb-4">ນີ້​ເຮັດ​ໃຫ້​ປະ​ເທດ​ອຸ​ດົມ​ສົມ​ບູນ​ດ້ວຍ​ວັດ​ທະ​ນະ​ທໍາ​ແລະ​ສະ​ຖານ​ທີ່​ທໍາ​ມະ​ຊາດ.
+                        ແລະມັນຍັງເປັນປະເທດທີ່ທ່ານສາມາດເດີນທາງໂດຍບໍ່ມີວີຊ່າ. ສະ​ນັ້ນ,
+                        ມັນ​ໄດ້​ກາຍ​ເປັນ​ສະ​ຖານ​ທີ່​ດຶງ​ດູດ​ນັກ​ທ່ອງ​ທ່ຽວ​ມາ​ຢ້ຽມ​ຢາມ.</p>
+                  <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ທ່ອງທ່ຽວ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ສະຖານທີ່ທ່ອງທ່ຽວ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ໄປກັບພວກເຮົາ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ທັງ 18 ແຂວງ ທົ່ວປະເທດ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ໄດ້ຕະຫຼອດເວລາ
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ພ້ອມໃຫ້ບໍລິການ</p>
+                        </div>
+                    </div>
+                    <button id="hov" class="btn btn-primary py-3 px-5 mt-2" data-bs-toggle="modal" data-bs-target="#readMoreModal">ອ່ານເພີ່ມເຕີມ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="modal fade" id="readMoreModal" tabindex="-1" aria-labelledby="readMoreModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="readMoreModalLabel">ລາຍລະອຽດເພີ່ມເຕີມ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>ປະເທດລາວ (ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ) ເປັນປະເທດທີ່ມີຄວາມງົດງາມທາງທຳມະຊາດ ແລະ ມີວັດທະນະທຳອັນລ້ຳເລິກ.</p>
+                    <p>ພູມສາດ ແລະ ທຳມະຊາດ:
+ລາວມີພື້ນທີ່ປະມານ 236,800 ຕາລາງກິໂລແມັດ ປະກອບດ້ວຍພູເຂົາສູງ, ປ່າໄມ້ດົງດິບ, ແລະ ທົ່ງພຽງແຫ່ງແມ່ນ້ຳຂອງ. ມີນ້ຳຕົກທີ່ສວຍງາມຫຼາຍແຫ່ງ ເຊັ່ນ ຕາດກວາງຊີ ແລະ ຕາດເຊ...</p>
+                    <p>ປະຊາກອນ ແລະ ວັດທະນະທຳ:
+ມີປະຊາກອນປະມານ 7.5 ລ້ານຄົນ ສ່ວນໃຫຍ່ເປັນຊົນເຜົ່າລາວ, ມົ້ງ, ຂະມຸ ແລະ ຊົນເຜົ່າອື່ນໆ. ຄົນລາວມີຈິດໃຈໃສ, ຮັກສາມັກຄີ ແລະ ມີສາສະຫນາພຸດເປັນຫຼັກ.</p>
+                    <p>ເສດຖະກິດ:
+ອາໄສກະສິກຳເປັນຫຼັກ, ປູກເຂົ້າ, ກາເຟ, ແລະ ພືດຜົນລະຕູ. ມີຊັບພະຍາກອນທຳມະຊາດຫຼາຍ ເຊັ່ນ ໄຟຟ້າພະລັງນ້ຳ, ແຮ່ທາດ.</p>
+                    <p>ອາຫານແຊບໆເຊັ່ນ:
+ເຂົ້າໜຽວ, ລາບ, ແຄບໝູ, ຕຳໝາກຫຸ່ງ ແລະ ອາຫານອື່ນໆ ທີ່ມີລົດຊາດເປັນເອກະລັກ.</p>
+                    <p>ລາວເປັນປະເທດທີ່ສະຫງົບ, ມີທຳມະຊາດທີ່ຍັງຄົງຄວາມບໍລິສຸດ ແລະ ຄົນທີ່ມີໃຈດີຕ້ອນຮັບນັກທ່ອງທ່ຽວ.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ປິດ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">ໄກ້ພາທ່ຽວ</h6>
+                <h1 class="mb-5">ໄກ້ຂອງພວກເຮົາ</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/kai1.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Kodee</h5>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/kai2.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Songkarn</h5>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/kai3.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Chanthakhone</h5>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/kai4.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Soukphasun</h5>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+        
+
+     
+  <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ບໍລິສັດ</h4>
+                    <a class="btn btn-link" href="">ກ່ຽວກັບ</a>
+                    <a class="btn btn-link" href="">ຕິດຕໍ່</a>
+                    <a class="btn btn-link" href="">ຄວາມເປັນສ່ວນຕົວ</a>
+                    <a class="btn btn-link" href="">ເງື່ອນໄຂ</a>
+                    <a class="btn btn-link" href="">ການຊ່ວຍເຫຼືອ</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ຕິດຕໍ່</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>ປະເທດລາວ</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+856 20 98837409</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>soukphasun8899@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ຮູບພາບ</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/luangphabang province.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/luangphabang.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/vientiane province.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/viengtiane capital province.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/vangvieng.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/patouxai.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ສົ່ງຂໍ້ຄວາມ</h4>
+                    <p>ກະລຸນາ ກອກຂໍ້ຄວາມທີ່ຕ້ອງການຈະສົ່ງໃຫ້ກັບພວກເຮົາ</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="ອິເມວຂອງທ່ານ">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">ສະມັກ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+        </div>
+    </div>
+
+
+     
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+     
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+     
+    <script src="js/main.js"></script>
+</body>
+
+</html>

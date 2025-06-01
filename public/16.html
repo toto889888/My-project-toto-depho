@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ສະຖານທີ່ທ່ອງທ່ຽວໃນລາວ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+
+      <style>
+        body {
+            font-family: phetsarath, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        
+        .section {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .place-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        
+        /* Responsive Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        /* TikTok Responsive Container */
+        .tiktok-container {
+            width: 100%;
+            max-width: 605px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .tiktok-container blockquote {
+            width: 100%;
+            max-width: 100%;
+            min-width: 280px;
+        }
+        
+        .history {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 850px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transform: translateY(-30px);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .history h2 {
+            color: #d81b60;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .history p {
+            font-size: 1.2em;
+            color: #0288d1;
+            line-height: 1.8;
+            margin: 10px 0;
+            font-family: phetsarath;
+            font-weight: 600;
+        }
+        
+        .rating {
+            color: #ffca28;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 15px 10px;
+            }
+            
+            .video-container {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+            
+            .place-img {
+                width: 95%;
+                max-width: none;
+            }
+            
+            .history {
+                margin: 15px 10px;
+                padding: 20px 15px;
+                transform: translateY(-20px);
+            }
+            
+            .history h2 {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+            
+            .history p {
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+            
+            .rating {
+                font-size: 1.3em;
+            }
+            
+            .tiktok-container {
+                margin: 0 10px;
+            }
+        }
+        
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .history h2 {
+                font-size: 1.8em;
+            }
+            
+            .history p {
+                font-size: 1em;
+            }
+            
+            .rating {
+                font-size: 1.2em;
+            }
+            
+            .video-container {
+                margin: 0 5px;
+            }
+            
+            .place-img {
+                width: 98%;
+            }
+        }
+        
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .video-container {
+                max-width: 1200px;
+            }
+            
+            .place-img {
+                max-width: 900px;
+            }
+            
+            .history {
+                max-width: 950px;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm" >
+            <img src="img/logo.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                  <a href="index.html" class="nav-item nav-link ">ໜ້າຫຼັກ</a>
+                    <a href="about.html" class="nav-item nav-link">ກ່ຽວກັບ</a>
+                   
+                    <a href="package.html" class="nav-item nav-link">ສະຖານທີ່</a>
+                   
+                    <a href="contact.html" class="nav-item nav-link">ຕິດຕໍ່</a>
+                </div>
+                 <a href="register.html" class="btn btn-primary rounded-pill py-2 px-4">ສະມັກບັນຊີ</a>
+            </div>
+        </nav>
+    <div class="section" style="margin-top: 10%;">
+        <img src="pic/slv1.jpg" alt="" class="place-img">
+       
+        <div class="history">
+            <h2>ນ້ຳຕົກຕາດເຊເສັດ</h2>
+            <p>ເປັນນ້ຳຕົກຕາດທີ່ມີຊື່ສຽງທີ່ສຸດໃນແຂວງສາລະວັນ. ຕັ້ງ​ຢູ່​ເຂດ​ປ່າ​ສະ​ຫງວນ​ແຫ່ງ​ຊາດ​ພູ​ກວາງ​ຊີ ເປັນ​ນ້ຳ​ຕົກ​ຕາດ​ໃຫຍ່​ທີ່​ມີ​ນ້ຳ​ໄຫຼ​ຕະຫຼອດ​ປີ. ບໍລິເວນອ້ອມຮອບເປັນປ່າທີ່ອຸດົມສົມບູນ. ເໝາະສຳລັບການພັກຜ່ອນ ແລະເພີດເພີນກັບທຳມະຊາດ.</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+        </div>
+    </div>
+
+    <div class="section">
+       
+        <img src="pic/slv2.jpg" alt="pictures" class="place-img">
+        
+        <div class="history">
+            <h2>ນ້ຳຕົກຕາດເຊບັງໄຟ</h2>
+           <p>ນ້ຳຕົກຕາດທີ່ສວຍງາມອີກແຫ່ງໜຶ່ງຂອງແຂວງສາລະວັນ. ເຊິ່ງບໍ່ເປັນທີ່ຮູ້ຈັກກັນດີໃນບັນດານັກທ່ອງທ່ຽວ. ການຮັກສາຄວາມບໍລິສຸດທໍາມະຊາດສູງ ການເດີນທາງສາມາດເປັນສິ່ງທ້າທາຍເລັກນ້ອຍ. ແຕ່ມັນຄຸ້ມຄ່າສໍາລັບຄວາມງາມທີ່ທ່ານໄດ້ຮັບປະສົບການ.</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+        </div>
+    </div>
+    <div class="section">
+        <img src="pic/sk5.webp" alt="pictures" class="place-img">
+        
+        <div class="history">
+            <h2>ນ້ຳຕົກຕາດຮາງ</h2>
+           <p>ເປັນນ້ຳຕົກຕາດທີ່ສວຍງາມທີ່ທ່ານສາມາດລອຍນ້ຳໄດ້. ມີບັນຍາກາດທີ່ຮົ່ມເຢັນ. ເຫມາະສໍາລັບການພັກຜ່ອນກັບຄອບຄົວຫຼືຫມູ່ເພື່ອນ. ຍັງມີບ່ອນພັກແບບບັງກະໂລຢູ່ແຄມນ້ຳຕົກ.</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+        </div>
+    </div>
+    <div class="section">
+        <img src="pic/slv5.webp" alt="pictures" class="place-img">
+        
+        <div class="history">
+            <h2> ນ້ຳຕົກຕາດເລາະ</h2>
+           <p>ເປັນນ້ຳຕົກຕາດທີ່ບໍ່ໄກຈາກນ້ຳຕົກຕາດຮັງ. ມັນມີລັກສະນະເປັນຊັ້ນ. ໄຫຼລົງສູ່ສະລອຍນ້ຳດ້ານລຸ່ມ ບັນຍາກາດງຽບສະຫງົບ ແລະທຳມະຊາດ.</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+        </div>
+    </div>
+    <div class="section">
+        <img src="pic/slv6.webp" alt="pictures" class="place-img">
+        
+        <div class="history">
+            <h2>ປ່າສະຫງວນແຫ່ງຊາດ ພູຊຽງທອງ</h2>
+           <p>ເປັນປ່າສະຫງວນຂະໜາດໃຫຍ່ ກວມເອົາຫຼາຍແຂວງ. ລວມທັງພາກສ່ວນຕ່າງໆຂອງແຂວງສາລະວັນ ມີຄວາມຫຼາກຫຼາຍທາງດ້ານຊີວະນາໆພັນສູງ ເປັນບ່ອນຢູ່ອາໄສຂອງສັດປ່າຫາຍາກຫຼາຍຊະນິດ. ແລະ ເປັນເຂດທີ່ເໝາະສົມສຳລັບການສຶກສາທຳມະຊາດ, ຍ່າງປ່າ ແລະ ຊົມຄວາມງາມຂອງປ່າດົງໝາກຄາຍ.</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+        </div>
+    </div>
+    <div class="section"> <div class="video-container">
+      <iframe width="1000" height="600" src="https://www.youtube.com/embed/EAeB9bOFBbA?si=dt1TKemRTGnddLpu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>  <div class="history">
+            <h2>ເມືອງສາລະວັນ</h2>
+           <p>ນະຄອນຫຼວງຂອງແຂວງສາລະວັນ. ເປັນສູນກາງບໍລິຫານ ແລະ ການຄ້າຂອງແຂວງ. ມັນເປັນເມືອງນ້ອຍໆ. ບ່ອນ​ທີ່​ວິ​ຖີ​ຊີ​ວິດ​ພື້ນ​ເມືອງ​ຍັງ​ຄົງ​ໄດ້​ຮັບ​ການ​ອະ​ນຸ​ຍາດ​ໃຫ້​ທ່ານ​ສາ​ມາດ​ຍ່າງ​ອ້ອມ​ຕົວ​ເມືອງ​ໄດ້​. ປະສົບການວິທີການດໍາລົງຊີວິດໃນທ້ອງຖິ່ນແລະຊື້ອາຫານທ້ອງຖິ່ນ</p>
+            <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+        </div>
+    </div>
+
+   
+    </div>
+</body>
+</html>

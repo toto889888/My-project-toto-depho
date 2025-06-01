@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ສະຖານທີ່ທ່ອງທ່ຽວໃນລາວ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+
+      <style>
+        body {
+            font-family: phetsarath, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        
+        .section {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .place-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            object-fit: cover;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        
+        /* Responsive Video Container */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        /* TikTok Responsive Container */
+        .tiktok-container {
+            width: 100%;
+            max-width: 605px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .tiktok-container blockquote {
+            width: 100%;
+            max-width: 100%;
+            min-width: 280px;
+        }
+        
+        .history {
+            background-color: #ffffff;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 850px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transform: translateY(-30px);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .history h2 {
+            color: #d81b60;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .history p {
+            font-size: 1.2em;
+            color: #0288d1;
+            line-height: 1.8;
+            margin: 10px 0;
+            font-family: phetsarath;
+            font-weight: 600;
+        }
+        
+        .rating {
+            color: #ffca28;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 15px 10px;
+            }
+            
+            .video-container {
+                max-width: 100%;
+                margin: 0 10px;
+            }
+            
+            .place-img {
+                width: 95%;
+                max-width: none;
+            }
+            
+            .history {
+                margin: 15px 10px;
+                padding: 20px 15px;
+                transform: translateY(-20px);
+            }
+            
+            .history h2 {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+            
+            .history p {
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+            
+            .rating {
+                font-size: 1.3em;
+            }
+            
+            .tiktok-container {
+                margin: 0 10px;
+            }
+        }
+        
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .history h2 {
+                font-size: 1.8em;
+            }
+            
+            .history p {
+                font-size: 1em;
+            }
+            
+            .rating {
+                font-size: 1.2em;
+            }
+            
+            .video-container {
+                margin: 0 5px;
+            }
+            
+            .place-img {
+                width: 98%;
+            }
+        }
+        
+        /* Large Desktop */
+        @media (min-width: 1200px) {
+            .video-container {
+                max-width: 1200px;
+            }
+            
+            .place-img {
+                max-width: 900px;
+            }
+            
+            .history {
+                max-width: 950px;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm">
+            <img src="img/logo.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">ໜ້າຫຼັກ</a>
+                    <a href="about.html" class="nav-item nav-link">ກ່ຽວກັບ</a>
+                    <a href="package.html" class="nav-item nav-link">ສະຖານທີ່</a>
+                    <a href="contact.html" class="nav-item nav-link">ຕິດຕໍ່</a>
+                </div>
+                <a href="register.html" class="btn btn-primary rounded-pill py-2 px-4">ສະມັກບັນຊີ</a>
+            </div>
+        </nav>
+
+        <div class="section" style="margin-top: 10%;">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/FbcDN1apKzo?si=CVvfFQNsi-dlFOV2" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="history">
+                <h2>ນ້ຳຕົກເຊເຜ-ເຊປອງໄລ</h2>
+                <p>ເປັນນ້ຳຕົກຕາດທີ່ສວຍງາມອີກແຫ່ງໜຶ່ງຂອງແຂວງອັດຕະປື. ມັນມີບັນຍາກາດທີ່ຮົ່ມເຢັນແລະທໍາມະຊາດ. ເຫມາະສໍາລັບການຜ່ອນຄາຍ</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <img src="pic/atp1.jpg" alt="pictures" class="place-img">
+            <div class="history">
+                <h2>ໜອງຟ້າ</h2>
+                <p>ເປັນທະເລສາບທຳມະຊາດຂະໜາດໃຫຍ່ ທີ່ມີທິວທັດທີ່ສວຍງາມ ແລະ ເປັນນິທານກ່ຽວກັບນາກ. ເປັນສະຖານທີ່ສັກສິດ ແລະ ເປັນບ່ອນພັກຜ່ອນຂອງຊາວທ້ອງຖິ່ນ. ທ່ານສາມາດໄປຂີ່ເຮືອຫຼືເພີດເພີນກັບທິວທັດຮອບທະເລສາບ.</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <img src="pic/atp2.jpg" alt="pictures" class="place-img">
+            <div class="history">
+                <h2>ປ່າສະຫງວນແຫ່ງຊາດ ອັດຕະປື</h2>
+                <p>ເປັນປ່າສະຫງວນຂະໜາດໃຫຍ່ ທີ່ມີຄວາມຫຼາກຫຼາຍທາງດ້ານຊີວະນາໆພັນສູງ. ມັນເປັນບ້ານຂອງສັດປ່າຫາຍາກຫຼາຍຊະນິດ. ລວມທັງສັດລ້ຽງລູກດ້ວຍນົມຂະຫນາດໃຫຍ່ແລະນົກທີ່ຫາຍາກ. ເໝາະສຳລັບນັກຄົ້ນຄວ້າ, ນັກເບິ່ງນົກ ແລະຜູ້ທີ່ມັກການຜະຈົນໄພໃນປ່າເລິກ.</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <img src="pic/atp3.jpg" alt="pictures" class="place-img">
+            <div class="history">
+                <h2>ບ້ານຊົນເຜົ່າ</h2>
+                <p>ແຂວງອັດຕະປື ເປັນທີ່ຕັ້ງຂອງຫຼາຍຊົນເຜົ່າເຊັ່ນ: ເຜົ່າຈ່າງ, ໄຕ, ເລວັນ, ອານົມ ແລະ ອີກຫຼາຍເຜົ່າທີ່ອາໄສຢູ່ໃນປ່າເລິກໆ. ການ​ຢ້ຽມ​ຢາມ​ບ້ານ​ເຫຼົ່າ​ນີ້​ຈະ​ເຮັດ​ໃຫ້​ທ່ານ​ໄດ້​ຮຽນ​ຮູ້​ກ່ຽວ​ກັບ​ວັດ​ທະ​ນະ​ທໍາ, ປະ​ເພ​ນີ​ແລະ​ຊີ​ວິດ​ທີ່​ເປັນ​ເອ​ກະ​ລັກ​ຂອງ​ແຕ່​ລະ​ຊົນ​ເຜົ່າ. ​ເຊິ່ງ​ຍັງ​ຄົງ​ຮັກສາ​ວິຖີ​ຊີວິດ​ແບບ​ດັ້ງ​ເດີມ​ຂອງ​ຕົນ.</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Pwzez0jVEkI?si=GnLycZmKmOexKUkP" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="history">
+                <h2>ເມືອງສາມັກຄີໄຊ</h2>
+                <p>ແຂວງອັດຕະປື. ມັນເປັນເມືອງນ້ອຍໆ. ສະຖານທີ່ງຽບສະຫງົບ ທີ່ວິຖີຊີວິດແບບດັ້ງເດີມຂອງລາວເຮົາຍັງຄົງຮັກສາໄວ້. ເຈົ້າສາມາດຍ່າງອ້ອມເມືອງໄດ້. ສໍາຜັດກັບບັນຍາກາດທ້ອງຖິ່ນແລະຊື້ເຄື່ອງທີ່ລະນຶກທີ່ເຮັດໂດຍຊ່າງຫັດຖະກໍາທ້ອງຖິ່ນ</p>
+                <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="tiktok-container">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@lullatravel/video/7319028647258606849" data-video-id="7319028647258606849" style="max-width: 605px;min-width: 325px;">
+                    <section>
+                        <a target="_blank" title="@lullatravel" href="https://www.tiktok.com/@lullatravel?refer=embed">@lullatravel</a> 
+                        ตาดหัวคน 
+                        <a title="อัตตะปือ" target="_blank" href="https://www.tiktok.com/tag/%E0%B8%AD%E0%B8%B1%E0%B8%95%E0%B8%95%E0%B8%B0%E0%B8%9B%E0%B8%B7%E0%B8%AD?refer=embed">#อัตตะปือ</a> 
+                        <a title="ลาวใต้" target="_blank" href="https://www.tiktok.com/tag/%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B9%83%E0%B8%95%E0%B9%89?refer=embed">#ลาวใต้</a> 
+                        <a title="เที่ยวลาวใต้" target="_blank" href="https://www.tiktok.com/tag/%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B9%83%E0%B8%95%E0%B9%89?refer=embed">#เที่ยวลาวใต้</a> 
+                        <a title="laos" target="_blank" href="https://www.tiktok.com/tag/laos?refer=embed">#Laos</a> 
+                        <a target="_blank" title="♬ Sky-Forest-Vlog-Electro-Sightseeing-History(941631) - ImoKenpi-Dou" href="https://www.tiktok.com/music/Sky-Forest-Vlog-Electro-Sightseeing-History-941631-6925905547473225729?refer=embed">♬ Sky-Forest-Vlog-Electro-Sightseeing-History(941631) - ImoKenpi-Dou</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+            <div class="history">
+                <h2>ນ້ຳຕົກຕາດຫົວຄົນ</h2>
+                <p></p>
+                <p class="rating">⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

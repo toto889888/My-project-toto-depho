@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขอรีเซ็ตรหัสผ่าน</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .error-message { color: red; display: none; }
+        body { font-family: 'Phetsarath', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="text-center mb-6">
+            <span class="text-4xl">🔐</span>
+            <h1 class="text-2xl font-bold">ຂໍປ່ຽນລະຫັດຜ່ານ</h1>
+            <p class="text-gray-600">ກະລຸນາກອກອີເມວເພື່ອຮັບລິ້ງສຳລັບປ່ຽນລະຫັດຜ່ານ</p>
+        </div>
+
+        <form id="requestResetForm">
+            <div class="mb-4">
+                <label class="block text-gray-700">ອີເມວ</label>
+                <input type="email" id="email" class="w-full p-2 border rounded" required>
+                <p id="emailError" class="error-message">ເກີດຂໍ້ຜິດພາດ</p>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">ສົ່ງລິ້ງປ່ຽນລະຫັດ</button>
+        </form>
+
+        <div class="text-center mt-4">
+            <a href="/login" class="text-blue-500 hover:underline">← ກັບໄປສູ່ກ່ອນໜ້າ</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('requestResetForm');
+        const emailError = document.getElementById('emailError');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            emailError.style.display = 'none';
+
+            try {
+                const response = await fetch('/api/request-reset', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('ส่งลิงก์รีเซ็ตรหัสผ่านไปยังอีเมลของคุณแล้ว');
+                } else {
+                    emailError.textContent = result.message || 'เกิดข้อผิดพลาด';
+                    emailError.style.display = 'block';
+                }
+            } catch (error) {
+                emailError.textContent = 'เกิดข้อผิดพลาดในการเชื่อมต่อ';
+                emailError.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

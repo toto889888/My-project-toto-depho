@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JarnT0-Travel In Laos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Phetsarath OT, sans-serif;
+            background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .left-panel {
+            background: linear-gradient(rgba(139, 195, 74, 0.9), rgba(104, 159, 56, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1000" height="1000" fill="url(%23pattern)"/></svg>');
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .logo {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .welcome-text h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .welcome-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .right-panel {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header h3 {
+            color: #4a4a4a;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input, select {
+            font-family: phetsarath, sans-serif;
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #8bc34a;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            margin-top: 3px;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8bc34a, #689f38);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+            font-family: phetsarath, sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 195, 74, 0.3);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #8bc34a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            
+            .left-panel {
+                padding: 30px;
+                min-height: 200px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .welcome-text h2 {
+                font-size: 24px;
+            }
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 5s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="floating-shapes">
+                <div class="shape"></div>
+                <div class="shape"></div>
+                <div class="shape"></div>
+            </div>
+            
+            <div class="logo">
+                <h1>JarnTO</h1>
+                <div style="font-size: 12px; margin-top: 5px;">TRAVEL</div>
+            </div>
+            
+            <div class="welcome-text" style="margin-bottom: 165px;">
+                <h2>ຍິນດີຕ້ອນຮັບ</h2>
+                <h2 style="color: #ffeb3b;">ການທ່ອງທ່ຽວໃນປະເທດລາວ</h2>
+                <p>ເຂົ້າຮ່ວມກັບພວກເຮົາເພື່ອສຳລວດ</p>
+                
+                <ul class="features">
+                    <li>ຄົ້ນພາສະຖານທີ່ ທີ່ນ່າຕື່ນຕາ</li>
+                    <li>ໄປກັບພວກເຮົາທຸກທີ່</li>
+                    <li>ພ້ອມໃຫ້ບໍລິການ</li>
+                    <li>ຮັບຂໍ້ສະເໜີພິເສດສະເພາະສະມາຊິກ</li>
+                </ul>
+            </div> <a href="index.html" style="width: 30%;margin-right: 80%;"><button class="submit-btn" >ກັບຄືນ</button></a>
+        </div>
+        
+        <div class="right-panel">
+            <div class="form-header">
+                <h3>ສະມັກສະມາຊິກ</h3>
+                <p>ກະລຸນາກອກຂໍ້ມູນຂອງທ່ານໃຫ້ຄົບ</p>
+            </div>
+            
+          <form id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">ຊື່</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">ນາມສະກຸນ</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">ອີເມວ</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">ເບີໂທ</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">ລະຫັດຜ່ານ</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">ຢືນຢັນລະຫັດຜ່ານ</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">ປະເທດທີ່ອາໃສຢູ່:</label>
+                    <select id="country" name="country" required>
+                        <option value="">ເລືອກປະເທດ</option>
+                        <option value="lao">ລາວ</option>
+                        <option value="thailand">ໄທ</option>
+                        <option value="vietnam">ວຽດນາມ</option>
+                        <option value="china">ຈີນ</option>
+                        <option value="myanmar">ມຽນມາ</option>
+                        <option value="cambodia">ກຳປູເຈຍ</option>
+                        <option value="other">ອື່ນໆ</option>
+                    </select>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">ຮັບຂ່າວສານ ແລະ ຂໍ້ສະເໜີພິເສດທາງ Email</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">ຂ້ອຍຍອມຮັບ <a href="#" style="color: #8bc34a;">ເງື່ອນໄຂການໃຊ້ງານ</a> ແລະ <a href="#" style="color: #8bc34a;">ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ</a></label>
+                </div>
+                
+                <button type="submit" value="ສະມັກສະມາຊິກ" class="submit-btn">ສະມັກສະມາຊິກ</button>
+                
+                <div class="login-link">
+                    ມີບັນຊີຢູ່ແລ້ວ? <a href="login.html" target="_blank">ເຂົ້າສູ່ລະບົບ</a>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+    
+      <script>
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const formData = new FormData(e.target);
+  
+  // รับค่าจากฟอร์ม
+  const data = {
+    firstName: formData.get('firstName'),
+    lastName: formData.get('lastName'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    password: formData.get('password'),
+    confirmPassword: formData.get('confirmPassword'),
+    country: formData.get('country'),
+    receiveNews: formData.get('newsletter') ? true : false, // แก้ไขชื่อฟิลด์
+    terms: formData.get('terms') ? true : false // เพิ่มการตรวจสอบ terms
+  };
+
+  // ตรวจสอบว่ากรอกข้อมูลครบหรือไม่
+  if (!data.firstName || !data.lastName || !data.email || !data.phone || 
+      !data.password || !data.confirmPassword || !data.country) {
+    alert('ກະລຸນາກອກຂໍ້ມູນທັງໝົດ');
+    return;
+  }
+
+  // ตรวจสอบว่ายอมรับข้อกำหนดหรือไม่
+  if (!data.terms) {
+    alert('กรุณายอมรับเงื่อนไขการใช้งาน');
+    return;
+  }
+
+  // ตรวจสอบรหัสผ่าน
+  if (data.password !== data.confirmPassword) {
+    alert('รหัสผ่านไม่ตรงกัน');
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    
+    const result = await response.json();
+    
+    if (response.ok) {
+      alert('สมัครสมาชิกสำเร็จ!');
+      window.location.href = 'login.html';
+    } else {
+      alert('เกิดข้อผิดพลาด: ' + result.message);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('เกิดข้อผิดพลาดในการเชื่อมต่อ: ' + error.message);
+  }
+});
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

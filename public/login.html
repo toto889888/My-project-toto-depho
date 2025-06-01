@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ - JarnTO Travel</title>
+    <style>
+        input::placeholder {
+    font-family: phetsarath, sans-serif; 
+   
+}
+ html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: phetsarath, sans-serif;
+            background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+           overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: floatUpDown 15s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            right: 10%;
+            animation-delay: 5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 80%;
+            animation-delay: 10s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 5%;
+            animation-delay: 7s;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateY(-30px) rotate(180deg); 
+                opacity: 0.6;
+            }
+        }
+
+        .container {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+            max-width: 800px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
+        }
+
+        .left-panel {
+            background: linear-gradient(rgba(139, 195, 74, 0.95), rgba(104, 159, 56, 0.95));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .logo {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .logo .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+
+        .welcome-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .welcome-text h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .welcome-text .highlight {
+            color: #ffeb3b;
+            font-weight: 600;
+        }
+
+        .welcome-text p {
+            font-size: 16px;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffeb3b;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .right-panel {
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .form-header h3 {
+            color: #2e7d32;
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e8e8e8;
+            border-radius: 15px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fff;
+            position: relative;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #8bc34a;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(139, 195, 74, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #8bc34a;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            transform: scale(1.2);
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .forgot-link {
+            color: #8bc34a;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, #8bc34a, #689f38);
+            color: white;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .login-btn:hover::before {
+            left: 100%;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(139, 195, 74, 0.4);
+        }
+
+        .login-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+
+        .divider span {
+            background: #f5f5f5;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .social-btn:hover {
+            border-color: #8bc34a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .register-link {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #8bc34a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 10px;
+            }
+            
+            .left-panel {
+                padding: 30px;
+                min-height: 250px;
+            }
+            
+            .right-panel {
+                padding: 30px 25px;
+            }
+            
+            .welcome-text h2 {
+                font-size: 24px;
+            }
+
+            .form-header h3 {
+                font-size: 28px;
+            }
+
+            .stats {
+                margin-top: 20px;
+            }
+
+            .social-login {
+                flex-direction: column;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <div class="logo">
+                <h1>JarnTO</h1>
+                <div class="subtitle">TRAVEL</div>
+            </div>
+            
+            <div class="welcome-text">
+                <h2>ຍິນດີຕ້ອນຮັບກັບມາ!</h2>
+                <h2 class="highlight">ກະລຸນາກອກຂໍ້ມູນ</h2>
+              
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">ຈຸດໝາຍ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1200+</div>
+                    <div class="stat-label">ສະມາຊິກ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9★</div>
+                    <div class="stat-label">ຄະແນນ</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="form-header">
+                <h3>ເຂົ້າສູ່ລະບົບ</h3>
+                <p>ກອກຂໍ້ມູນເພື່ອເຂົ້າເຖິງບັນຊີຂອງເຈົ້າ</p>
+            </div>
+            
+           <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">ອີເມວຫຼືເບີໂທລະສັບ</label>
+                   
+                    <input type="text" name="emailOrPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">ລະຫັດຜ່ານ</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required>
+                       
+                     <span class="toggle-password">👁️</span>
+                    </div>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="checkbox-group">
+                     
+                        <input type="checkbox" name="rememberMe">
+                        <label for="remember">ຈົດຈຳການເຂົ້າສູ່ລະບົບ</label>
+                    </div>
+                   <a href="update_password.html">ລືມລະຫັດຜ່ານ?</a>
+                </div>
+                
+                <button type="submit" value="ເຂົ້າສູ່ລະບົບ" class="login-btn" id="loginBtn"style="font-family: phetsarath, sans-serif;">
+                    ເຂົ້າສູ່ລະບົບ
+                </button>
+                
+                <div class="divider">
+                    <span>ຫຼື ເຂົ້າສູ່ລະບົບດ້ວຍ</span>
+                </div>
+                
+                <div class="social-login">
+                   <a style="text-decoration: none;color: #000;" href="https://accounts.google.com/" class="social-btn" onclick="socialLogin('google')">
+                        <span style="color: #db4437;">G</span>Google
+                   </a> 
+                   <a style="text-decoration: none;color: #000;" href="https://Facebook.com" class="social-btn" onclick="socialLogin('Facebook')">
+                        <span style="color: #4267B2;">f</span> Facebook
+                   </a>
+                </div>
+                
+                <div class="register-link">
+                    ຍັງບໍ່ມີບັນຊີ? <a href="register.html" onclick="showRegisterPage()">ສະມັກສະມາຊິກ</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {
+      emailOrPhone: formData.get('emailOrPhone'),
+      password: formData.get('password'),
+    };
+
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      alert(result.message);
+      if (response.status === 200) {
+        window.location.href = 'index.html'; // Redirect to homepage
+      }
+    } catch (error) {
+      alert('Error: ' + error.message);
+    }
+  });
+  
+  const passwordInput = document.getElementById('password');
+  const togglePassword = document.querySelector('.toggle-password');
+  togglePassword.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    togglePassword.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+  });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
