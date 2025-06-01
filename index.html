@@ -1,89 +1,795 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en"><head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>JarnT0-Travel In Laos</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.8.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.8.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.8.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <link href="img/favicon.ico" rel="icon">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
-</html>
+
+
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>ປະເທດລາວ</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+856 2098837409</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>soukphasun8899@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 sticky-top shadow-sm">
+            <img src="img/logo.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">ໜ້າຫຼັກ</a>
+                    <a href="about.html" class="nav-item nav-link">ກ່ຽວກັບ</a>
+                   
+                    <a href="package.html" class="nav-item nav-link">ສະຖານທີ່</a>
+                   
+                    <a href="contact.html" class="nav-item nav-link">ຕິດຕໍ່</a>
+                </div>
+                
+                 <a href="register.html" class="btn btn-primary rounded-pill py-2 px-4">ສະມັກບັນຊີ</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white mb-3 animated slideInDown">ຍິນດີຕ້ອນຮັບທຸກທ່ານ</h1>
+                        <p class="fs-4 text-white mb-4 animated slideInDown">
+                            ເຂົ້າສູ່ສະຖານທີ່ທ່ອງທ່ຽວທີ່ມີຊື່ສຽງໃນປະເທດລາວ</p>
+                        <div class="position-relative w-75 mx-auto animated slideInDown">
+                            <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="ກະລຸນາໃສ່ຊື່ສະຖານທີ່ທ່ອງທ່ຽວ" style="height: 60px;">
+                            <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute top-0 end-0 me-2" style="margin-top: 7px;">ຄົ້ນຫາ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/1.png" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">ກ່ຽວກັບພວກເຮົາ</h6>
+                    <h1 class="mb-4">ຍິນດີຕ້ອນຮັບ <span class="text-primary">ເຂົ້າສູ່ການທ່ອງທ່ຽວ</span></h1>
+                    <p class="mb-4">
+                        ປະເທດລາວຕັ້ງຢູ່ໃນເຂດອາຊີຕາເວັນອອກສຽງໃຕ້ (Southeast Asia) ແລະເປັນປະເທດທີ່ບໍ່ມີທາງອອກສູ່ທະເລ (landlocked country)ລາວມີຊາຍແດນຕິດກັບ:
+
+ຈີນ ທາງທິດເໜືອ
+ຫວຽດນາມ ທາງທິດຕາເວັນອອກ
+ກຳປູເຈຍ ທາງທິດໃຕ້
+ໄທ ທາງທິດຕາເວັນຕົກ
+ມຽນມາ (ພະມ້າ) ທາງທິດຕາເວັນຕົກສຽງເໜືອ</p>
+                    <p class="mb-4">ນີ້​ເຮັດ​ໃຫ້​ປະ​ເທດ​ອຸ​ດົມ​ສົມ​ບູນ​ດ້ວຍ​ວັດ​ທະ​ນະ​ທໍາ​ແລະ​ສະ​ຖານ​ທີ່​ທໍາ​ມະ​ຊາດ.
+                        ແລະມັນຍັງເປັນປະເທດທີ່ທ່ານສາມາດເດີນທາງໂດຍບໍ່ມີວີຊ່າ. ສະ​ນັ້ນ,
+                        ມັນ​ໄດ້​ກາຍ​ເປັນ​ສະ​ຖານ​ທີ່​ດຶງ​ດູດ​ນັກ​ທ່ອງ​ທ່ຽວ​ມາ​ຢ້ຽມ​ຢາມ.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ທ່ອງທ່ຽວ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ສະຖານທີ່ທ່ອງທ່ຽວ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ໄປກັບພວກເຮົາ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ທັງ 18 ແຂວງ ທົ່ວປະເທດ</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ໄດ້ຕະຫຼອດເວລາ
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ພ້ອມໃຫ້ບໍລິການ</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="about.html">ກ່ຽວກັບພວກເຮົາ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-xxl py-5 destination">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <h6 class="section-title bg-white text-center text-primary px-3">ສະຖານທີ່ທ່ອງທ່ຽວ</h6>
+                <h1 class="mb-5">ຍອດນິຍົມ</h1>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: zoomIn;">
+                            <a class="position-relative d-block overflow-hidden" href="10.html">
+                                <img class="img-fluid" src="img/thonghaiheen.jpg" alt="">
+                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    30% OFF</div>
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                                    ຊຽງຂວາງ</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: zoomIn;">
+                            <a class="position-relative d-block overflow-hidden" href="2.html">
+                                <img class="img-fluid" src="img/patouxai.jpg" alt="">
+                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    25% OFF</div>
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                                    ນະຄອນຫຼວງ</div>
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+                            <a class="position-relative d-block overflow-hidden" href="3.html">
+                                <img class="img-fluid" src="img/vangvieng.jpg" alt="">
+                                <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    35% OFF</div>
+                                <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                                    ວັງວຽງ</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px; visibility: visible; animation-delay: 0.7s; animation-name: zoomIn;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="1.html">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/luangphabang province.jpg" alt="" style="object-fit: cover;">
+                        <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">20% OFF
+                        </div>
+                        <div class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                            ຫຼວງພະບາງ</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                <h6 class="section-title bg-white text-center text-primary px-3">ສະຖານທີ່ທ່ອງທ່ຽວ</h6>
+                <h1 class="mb-5">ປະຈຳຂອງແຕ່ລະແຂວງ</h1>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/luangphabang000.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຫຼວງພະບາງ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ຫຼວງພະບາງເມືອງງາມ ອາຮາມຮຸ່ງເຮືອງ ງາມພູຕັ້ງຢູ່ກາງເມືອງ ເລືອງລືວັດທະນະທຳ
+ເມືອງນຸ່ງສິ້ນໄໝ ຂວັນໃຈນັກທ່ອງທ່ຽວ ເອາະຫຼາມໃສ່ສະຂ່ານ ງານຊ່ວງເຮືອເດືອນ 9 ເມືອງກ້ຽວ
+ຄຳຫວານ ຕຳນານເມືອງຂຳທຸ່ມ ວັດເກົ່າແກ່ມາກມີ ຕາດກວາງຊີ ແລະ ຖ້ຳຕີ່ງເປັນເມືອງມໍລະດົກໂລກ.
+
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="1.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/viengtiane capital province.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ນະຄອນຫຼວງ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ມາວຽງຈັນຊົມຂົວມີດຕະພາບ ກາບໄຫ້ວຫໍພະແກ້ວຊົມສວນປະຕູໄຊ ໄຫ້ວພະທາດຫລວງມີ່ງຂວັນຊົມວີວທີວທັດແຄມຂອງ ຫາດຊາຍສີທອງດອນຈັນຊີມລົດອາຫານນາໆຊາດ ເທີງຫໍຜາສາດສີ່ສີບຊັ້ນພັກຜ່ອນເທີງວີມານສະຫວັນ ໂຮງແຮມດອນຈັນພາເລດລືນາມ</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="2.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/vangvieng.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ວຽງຈັນ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ເມືອງເກົ່າໄຜ່ໜາມ ລືນນາມອ່າງນ້ຳງື່ມ<br>
+ຕຳນານເດີນລາຍງ້າວ ອູ່ເຂົ້າຊາວເມືອງ
+ຄົນເຮືອງຂັບງື່ມ <br>ດື່ມດຳທຳມະຊາດ ປະຊາລາດສາມັກຄີ
+</p><br><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="3.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/luangnamtha.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຫຼວງນ້ຳທາ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ບັ້ນຮົບຫຼວງນ້ຳທາ ພະທາດໃຫຍ່ຊຽງເປງ
+ຊາບຊື້ງກັບວັດທະນະທຳຫຼາຍເຜົ່າ ເຂົ້າຊອຍແຊບເມືອງສິງ
+ລີງລາຍແພໄໝມ້ອນ ເມືອງ ຫຼວງນ້ຳທາ ທ່ຽວປ່າສະຫງວນແຫ່ງຊາກນ້ຳຮ່າ
+ເຂດພັດທະນາເສດຖະກິດພິເສດບໍ່ເຕັນແດນຄຳ ຮ່ວມເຕັ້ນແຊນຳສາວໄຕດຳ ງາມແທ້ລະກ໋າ
+
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="4.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/oudomxay.webp" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ອຸດົມໄຊ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ທ່ຽວອຸດົມໄຊ ໄປຊົມທຳມະຊາດ
+ນ້ຳຕົກຕາດຫົວນ້ຳກັດ ຊົມວັດທະນະທຳຊົນເຜົ່າ
+ໄຫ້ວພຼະເຈົ້າສິງຄຳ ດື່ມນ້ຳຊາພັນປີ
+ຂີ່ເຮືອທ່ອງທ່ຽວ ຊົມທຳມະຊາດແຄມຂອງ
+</p><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="5.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/phongsaly.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຜົ້ງສາລີ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ຜົ້ງສາລີ ປຽບຄືດັ່ງສະຫວັນສັ່ງ ວິມານດ່ານແດນພູດອຍ
+ເປັນດິນແດນວິລະຊົນ ຮັກຄອນພົງພັນເຊື້ອ
+ງາມເຫຼືອຫຼາຍພູຟ້າ ທະເລຫຼວງໝອກໃຫຍ່
+ເຊີນຊີມປາພູຟ້າ ດື່ມເຫຼົ້າຂຽວເອ່ວສະຖານທີ່
+ເບີ່ງຮີດຄອງປະເພນີ ເອກະລັດຫຼາຍເຜົ່າເຊື້ອ ເປັນຂອງຕ້ອນທ່ານຜູ້ຊົມ
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="6.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/borkeo.jpeg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ບໍ່ແກ້ວ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ບໍ່ແກ້ວມະນີລ້ຳຄ່າ ຊົມປ່າດອກງີ້ວບານ
+ເທດສະການບັນດາເຜົ່າ ຖິ່ນເມືອງເກົ່າສຸວັນນະໂຄມຄຳ
+ຊົມຖ້ຳນ້ຳຍູ້ ອູ້ສາວລາວຢວນ
+ຊວນຊົມວັດຈອມເຂົາມະນີລັດ ໄຫວ້ພະທາດສຸວັນນະຜາຄຳ
+</p><br><br><br>                            <div class="d-flex justify-content-center mb-2">
+                                <a href="7.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/huaphun.webp" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຫົວພັນ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ງົດງາມພູຜາ ນ້ຳມ້າສ່ອງໃສ
+ວຽງໄຊປະຫວັດສາດ <br>ຜ້າໃໝຊຳໃຕ້
+ຫີນຕັ້ງຫົວເມືອງ <br>ຖິ່ນພູສາມເຊົ່າ
+ຄົກເຂົ້ານ້ຳລິນ ແຜ່ນດິນວິລະຊົນ
+
+</p><br><br><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="8.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/xayyabouly.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ໄຊຍະບຸລີ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ງາມທາດປວກ ເມືອງ ຄອບ ປະນົມນ້ອມພະທາດມັດຄຳ ເມືອງ ເງິນແສນເພີດເພີນພະທາດຊຽງ
+ລົມ ເມືອງ ຊຽງຮ່ອນ ອອນຊອນບຸນບັ້ງໄຟ ເມືອງ ປາກລາຍ ງາມເຫຼືອຫຼາຍ
+ສາວດອກຝ້າຍຈັນເມືອງ ແກ່ນທ້າວ ຫວານນ້ຳໝາກພ້າວ ເມືອງ ບໍ່ແຕນ
+ແດນພູເຂົາຊ້າງ ເມືອງ ຫົງສາ – ເມືອງ ທົ່ງ ຮວງເຂົ້າກົ່ງເມືອງພຽງ
+ສຽງຂັບລຳລ່ອງຮຸ່ງ ເມືອງ ໄຊຍະບູລີ
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="9.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/xieng.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຊຽງຂວາງ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ພູກູດມີໄຊ ທົ່ງໄຫຫີນລືນາມ
+ສາວງາມເມືອງພວນ<br> ເຊີນຊວນທ່ຽວຊົມແຂວງວິລະຊົນ
+</p><br><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="10.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/bolikhamxay.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ບໍລິຄຳໄຊ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ຖິ່ນອາໃສສາວເມີ້ຍຜູ້ໂສພາ ຖິ່ນຢູ່ໂຕເສົາຫຼາ
+ໄມ້ເກດສະໜາຄ່າແພງ ທົ່ງນາແຊງກ້ວາງໄກ
+ພະບາດໃຫຍ່ໂພນສັນ ຄົນຊ່າລືກ່າວເອີ້ນ ແດນກຸຫຼາບປາກຊັນ
+</p><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="11.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/xaysomboun.webp" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ໄຊສົມບູນ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ຄົ້ນຫາປະຫວັດສາດເມືອງລ້ອງແຈ້ງ ແຍງຊົມທຳມະຊາດສັນພູໝອກ ຊອກຫາວິລະກໍາຖໍ້າເຈົ້າອານຸວົງ ລົງລ່ອງເຮືອຊົມທີວທັດທີ່ທ່າໂທມ ກິນເຂົ້າປ່າສາມັກຄີຕາດຜາແຊບລ້ອງຊານ ຊົມຕໍານານນໍ້າຕົກຕາດຜາແຈແລເມືອງຮົ່ມ”
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="12.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/khammuan.jpeg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຄຳມ່ວນ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ຄຳມ່ວນດິນແດນທຳມະຊາດ ປະຫວັດສາດວິລະຊົນ
+ຕົ້ນກຳເນີດລຳພະຫຍາມະຫາໄຊ ກິນຊຸບໜໍ່ໄມ້
+ແກງໄກ່ໃສ່ສານ ນະມັດສະການພະທາດສີໂຄດຕະບອງ
+ເປັນເຈົ້າຂອງເຂົ້າໜົມປ່ານ ປະສານປວງປະຊາ
+ເລັ່ງລັດພັດທະນາ ຊ່ວຍປະຊາໃຫ້ມີສຸກ
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="13.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/savannakhed.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ສະຫວັນນະເຂດ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ສະຫວັນນະເຂດຜືນແຜ່ນດິນຄຳ ພະທາດອີງຮັງສະຖານບູຮານງາມສະຫງ່າ
+ສັດໂລກໄດໂນເຊົາຮ້ອຍລ້ານປີ ປະເພນີວັດທະນະທຳລ້ຳເລີດ ກຳເນີດຂັບລຳ 4 ຈັງຫວະ
+
+</p><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="14.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/champasak.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ຈຳປາສັກ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ເອກະລັກວັດພູ ກຸຫລາບປາກເຊ
+ກະເຟປາກຊ່ອງ <br>ນ້ຳຂອງໂຕນຄອນ ສີພັນດອນລືນາມ
+
+</p><br><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="15.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/salavan.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ສາລະວັນ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ໝາກພ້າວນາໄຊ ປີ້ງໄກ່ນາປົ່ງ<br>
+ເຫຼົ້າຂາວເມືອງຄົງ ລຳວົງສາລະວັນ
+
+</p><br><br>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="16.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/sekong.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ເຊກອງ</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ເອກະລັກພູນາງລາວ ແວວວາວຄ່ານ່າຊື່ນໃຈ
+ທ່ຽວວັງໄງດື່ມເຫຼ້າໄຫ ເມືອງ ດາກຈຶງ ຄະນຶງຫາ
+ສາຍທາລາຕົກຕາດແສກ ແປດພະໄທຢ່າລືມໄປຂໍປັນກອບ
+ບອກຄວາມສາມັກຄີ ໄປຮູ້ຈັກບຸນປະເພນີບັນດາເຜົ່າ
+
+</p>
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="17.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/attapue.jpg" alt="">
+                        </div>
+
+                        <div class="text-center p-4">
+                            <h3 class="mb-0">ອັດຕະປື</h3>
+                            <div class="mb-3">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                            <p style="font-weight: 600;">ລຳນ້ຳໃສປ່າໄມ້ຂຽວ ທ່ອງທ່ຽວໜອງຟ້າ
+ຊົມຜາຮຽງຊານໄຊ <br>ໄຫ້ວພະອົງແສນ ພັກແດນສາມັກຄີ
+</p><br><br>
+
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="18.html" class="btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px;">ລາຍລະອຽດ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ບໍລິສັດ</h4>
+                    <a class="btn btn-link" href="">ກ່ຽວກັບ</a>
+                    <a class="btn btn-link" href="">ຕິດຕໍ່</a>
+                    <a class="btn btn-link" href="">ຄວາມເປັນສ່ວນຕົວ</a>
+                    <a class="btn btn-link" href="">ເງື່ອນໄຂ</a>
+                    <a class="btn btn-link" href="">ການຊ່ວຍເຫຼືອ</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ຕິດຕໍ່</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>ປະເທດລາວ</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+856 20 98837409</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>soukphasun8899@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ຮູບພາບ</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/luangphabang province.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/luangphabang.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/vientiane province.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/viengtiane capital province.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/vangvieng.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/patouxai.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">ສົ່ງຂໍ້ຄວາມ</h4>
+                    <p>ກະລຸນາ ກອກຂໍ້ຄວາມທີ່ຕ້ອງການຈະສົ່ງໃຫ້ກັບພວກເຮົາ</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="ອິເມວຂອງທ່ານ">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">ສະມັກ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+        </div>
+    </div>
+
+
+
+
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" style=""><i class="bi bi-arrow-up"></i></a>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+
+</body>
